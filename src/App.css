@@ -1,0 +1,593 @@
+/* Home.css */
+:root {
+  --dark-green: #0c6d62; /* 70% dark green */
+  --dark-blue: #10456d; /* 30% dark blue */
+  --light-green: #0bd03f; /* Light green accent */
+  --accent-color: #ff9900; /* A custom accent color */
+}
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth; /* Smooth scrolling for the whole page */
+}
+
+/* Home content styles */
+.home-content {
+  max-width: 1200px; /* Limit the width of home content */
+  margin: 0 auto; /* Center the content */
+}
+
+.card-wrapper {
+  margin-top: 40px;
+  position: relative;
+  opacity: 0; /* Start as invisible */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+}
+
+.card-wrapper.visible {
+  opacity: 1; /* Fully visible when in view */
+  transform: translateY(0); /* Move to original position */
+}
+
+.card-number {
+  position: absolute;
+  top: -35px; /* Adjust based on visual needs */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0a984b; /* Green background */
+  color: white;
+  width: 40px; /* Square shape */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px; /* Adjust font size */
+  font-weight: bold;
+  border-radius: 0; /* Square corners */
+  animation: slide 2s infinite; /* Continuous sliding animation */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 260px; /* Increased height */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Increased gap between card rows */
+.card-wrapper {
+  margin-bottom: 40px; /* Space between rows */
+}
+
+.stats-section {
+  background-color: #f8fafc; /* Light gray background */
+}
+
+/* Flex and spacing adjustments for stats section */
+.stats-section .grid {
+  gap: 2rem; /* Adjust spacing between columns */
+}
+
+/* Each column in the stats section should have equal height */
+.stats-section > .grid > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100%; /* Ensure equal height */
+}
+
+/* Centering for count text and image */
+.count-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content */
+  text-align: center; /* Center text */
+}
+
+/* Space between sections */
+.stats-section > .grid > div {
+  margin: 20px 0; /* Add margin to create space between sections */
+}
+
+/* Increased size of the 100% text */
+.stats-section .stat-number {
+  font-size: 3rem; /* Increased size for better visibility */
+  color: #0a984b; /* Dark green color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stats-section .grid {
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px); /* Start from below */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: translateY(0); /* End at original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* CSS for card number sliding */
+@keyframes slide {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-40%, 0); } /* Slide slightly to the left */
+  100% { transform: translate(-50%, 0); }
+}
+/* Updated Info Section (Why Choose Us) */
+.info-section-new {
+  background-color: white;
+  padding: 40px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center the content */
+}
+
+.info-content-new {
+  max-width: 800px;
+  width: 100%;
+  text-align: center; /* Ensure center alignment */
+}
+
+.section-heading-new {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  text-align: center; /* Ensure heading is centered */
+}
+
+.section-paragraph-new {
+  font-size: 1.125rem;
+  color: var(--dark-blue);
+  line-height: 1.8;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: 'Georgia', serif;
+  text-align: center; /* Ensure paragraph is centered */
+}
+
+/* Two-Column Section */
+/* Full-width color frame */
+.image-text-frame {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, var(--dark-green), var(--light-green), var(--dark-blue)); /* Using your 3 colors */
+  padding: 30px;
+  border-radius: 15px; /* Soft rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Adds depth */
+  margin: 20px 0; /* Adds spacing between sections */
+  width: 100vw; /* Full width of viewport */
+  position: relative; /* Ensure proper positioning */
+  left: 50%; /* Center the frame */
+  right: 50%; /* Center the frame */
+  transform: translate(-50%, 0); /* Shift it back to center */
+}
+
+/* Styling for text inside the unified frame */
+.text-container {
+  flex: 1;
+  color: white; /* Ensure text is readable */
+  padding: 20px;
+}
+
+/* Styling for images inside the unified frame */
+.image-frame {
+  flex: 1;
+  padding: 20px;
+}
+
+.styled-image {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle depth to image */
+}
+
+/* Text container settings */
+.text-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #0a984b; /* Background for the text container */
+}
+
+/* Section heading */
+.paragraph-heading {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center; /* Center align */
+}
+
+/* Updated description paragraph for lines */
+.description-paragraph {
+  font-size: 1.2rem;
+  color: black; /* Change text color to black */
+  line-height: 1.6;
+  text-align: center;
+  position: relative; /* Position relative for the line effect */
+  padding-bottom: 10px; /* Space for the line */
+}
+
+/* Adding the line effect */
+.description-paragraph span {
+  display: block; /* Each line as a block */
+  position: relative; /* Position for the line */
+  margin-bottom: 10px; /* Space between lines */
+}
+
+.description-paragraph span::after {
+  content: '';
+  display: block;
+  width: 100%; /* Full width line */
+  height: 2px; /* Height of the line */
+  background-color: black; /* Line color */
+  position: absolute; /* Absolute positioning */
+  bottom: -5px; /* Align line slightly below the text */
+}
+
+/* Change text color on hover */
+.description-paragraph span:hover {
+  color: rgb(50, 4, 110); /* Change text color to white on hover */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* New Section Below */
+.new-section {
+  background-color: white; /* Keeping the background white */
+  padding: 40px 20px;
+  margin: 40px 0; /* Add margin for spacing */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center the content */
+  width: 100vw; /* Ensure this section spans full width */
+  position: relative; /* Position for centering */
+  left: 50%; /* Center the frame */
+  right: 50%; /* Center the frame */
+  transform: translate(-50%, 0); /* Shift it back to center */
+}
+
+.image-frame-new {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.styled-image-new {
+  width: 100%;
+  max-width: 500px;
+  border: 5px solid #0c6d62;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-container-new {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white; /* White background for text container */
+}
+
+.paragraph-heading-new {
+  font-size: 2rem;
+  color: var(--dark-blue); /* Changed to dark blue for contrast */
+  margin-bottom: 10px;
+}
+
+/* Fade-in animation on scroll */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Transition effect */
+}
+
+.in-view {
+  opacity: 1; /* Make the section visible */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .two-column-section {
+    flex-direction: column;
+  }
+}
+/* Responsive styles */
+/* CSS for Mobile View */
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .new-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text for better readability */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+  .image-text-frame {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center horizontally */
+    width: 100%; /* Ensure it takes full width */
+  }
+
+  .text-container-new, .image-frame-new {
+    width: 100%; /* Make both take full width */
+    margin: 10px 0; /* Add spacing between image and text */
+  }
+
+  .mobile-image {
+    margin: 10px 0; /* Optional: add margin for better spacing */
+  }
+}
+
+
+
+
+
+
+/* Contact Page Styling */
+
+/* Contact Section */
+.contact-section {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+/* Form Container */
+.contact-form-container {
+  width: 100%;
+  max-width: 600px; /* Set a max width for the form */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; /* Spacing below the form */
+}
+
+/* Form Title */
+.form-title {
+  font-size: 28px; /* Adjusted font size for mobile */
+  color: #10456d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.styled-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+}
+
+/* Input Styles */
+.form-input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #0c6d62; /* Change border color on focus */
+}
+
+.submit-button {
+  padding: 12px 20px;
+  background-color: #0c6d62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-top: 20px; /* Spacing above the info section */
+}
+
+/* Info Box */
+.info-box {
+  background-color: #fff;
+  padding: 20px;
+  width: 30%; /* Adjust to fit three boxes in a row */
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px; /* Margin around info boxes */
+}
+
+.info-heading {
+  font-size: 20px;
+  color: #0c6d62;
+}
+
+.info-text a {
+  color: #10456d;
+  text-decoration: none;
+}
+
+.info-text a:hover {
+  text-decoration: underline;
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  margin-top: 20px; /* Spacing above the map */
+}
+
+/* Map Info Box */
+.map-info-box {
+  position: absolute;
+  bottom: 10%; /* Position higher within the map */
+  left: 5%; /* Align to the left */
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.map-address {
+  font-size: 16px;
+}
+
+/* Map Rating */
+.map-rating {
+  color: yellow; /* Change star color to yellow */
+  font-size: 18px; /* Adjust size as needed */
+}
+
+/* Get Directions Button */
+.map-button {
+  background-color: #0c6d62;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 20px;
+  }
+
+  .info-section {
+    flex-direction: column; /* Stack info boxes vertically */
+    align-items: center; /* Center items on mobile */
+  }
+
+  .info-box {
+    width: 90%; /* Make boxes full width on mobile */
+    margin: 10px 0; /* Margin for vertical spacing */
+  }
+
+  .map-info-box {
+    width: 90%; /* Ensure it fits well on mobile */
+  }
+
+  .form-title {
+    font-size: 24px; /* Smaller title font size */
+  }
+}
+/* Map Container */
+.map-container {
+  width: 100%;
+  margin-top: 20px; /* Spacing above the map */
+  position: relative; /* Set relative positioning for the map container */
+}
+
+/* Map Info Box */
+.map-info-box {
+  position: absolute; /* Position absolute to the map */
+  bottom: 20px; /* Adjust position above the bottom edge */
+  left: 20px; /* Position from the left */
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* Ensure the info box appears above the map */
+}
+
+/* Rest of your CSS remains unchanged... */
+.info-box:hover {
+  background-color: #0a984b;
+  color: white;
+}
+
+.info-heading {
+  font-size: 20px;
+  color: #10456d;
+}
+
+.info-text a {
+  color: #0c6d62;
+  text-decoration: none;
+}
+
+.info-text a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+
+.text-dark-green {
+  color: #0c6d62; /* Dark Green */
+}
+
+.text-dark-blue {
+  color: #10456d; /* Dark Blue */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-12 {
+  margin-bottom: 3rem; /* Spacing below headings */
+}
+
+.mb-4 {
+  margin-bottom: 1rem; /* Spacing between headings */
+}
+
+.font-bold {
+  font-weight: 700; /* Bold font weight */
+}
+
+.font-semibold {
+  font-weight: 600; /* Semi-bold font weight */
+}
+
+
+
+
