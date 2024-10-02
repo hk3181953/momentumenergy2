@@ -113,7 +113,7 @@ function Contact() {
               <FaPhoneAlt /> UAN
             </h3>
             <p className="info-text">
-              <a href="tel:+923212630575">+923212630575</a>
+              <a href="tel:+923111137237">+92 311 113 7237</a>
             </p>
           </div>
           <div className="info-box">
