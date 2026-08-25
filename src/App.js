@@ -8,7 +8,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Momentum from './Pages/Momentum';
-import PrivacyPolicies from './Pages/privacy-policies';
+import PrivacyPolicies from './Pages/privacypolicies';
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
             />
 
            <Route
-  path="/privacy-policy"
+  path="/privacypolicy"
   element={<PrivacyPolicies />}
 />
 
