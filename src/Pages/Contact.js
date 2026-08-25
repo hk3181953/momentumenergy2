@@ -73,7 +73,7 @@ function Contact() {
                 <label htmlFor="email">Email</label>
                 <Field type="email" id="email" name="email" required className="form-input" />
 
-                <label htmlFor="file">Attach Electricity Bill</label>
+                <label htmlFor="file">Attach Electricity Bills</label>
                 <input 
                   type="file" 
                   id="file" 
