@@ -1,26 +1,46 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Mnavbar from './Component/Mnavbar';
 import Footer from './Component/Footer';
+
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Momentum from './Pages/Momentum';
+import PrivacyPolicies from './Pages/privacy-policies';
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Router>
-        <Mnavbar /> {/* Navbar always visible */}
+
+        <Mnavbar />
+
         <main className="flex-grow">
           <Routes>
+
             <Route path="/" element={<Home />} />
+
             <Route path="/about" element={<About />} />
+
             <Route path="/contact" element={<Contact />} />
-            <Route path="/why-momentum-energy" element={<Momentum />} />
+
+            <Route
+              path="/why-momentum-energy"
+              element={<Momentum />}
+            />
+
+           <Route
+  path="/privacy-policy"
+  element={<PrivacyPolicies />}
+/>
+
           </Routes>
         </main>
+
         <Footer />
+
       </Router>
     </div>
   );
